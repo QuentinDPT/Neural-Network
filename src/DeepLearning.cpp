@@ -79,6 +79,43 @@ void NeuralNetwork::train(Matrix<double> *input, Matrix<double> *target){
 }
 
 void NeuralNetwork::visualize(){
+
+    int nbNeurons[m_nbLayer+1] ;
+    int maxNeurons = m_inputSize ;
+    nbNeurons[0] = m_inputSize ;
+    for(int i = 1 ; i< m_nbLayer+1 ; i++){
+        nbNeurons[i] = m_layer[i].getRows() ;
+        if(maxNeurons < nbNeurons[i])
+            maxNeurons = nbNeurons[i] ;
+    }
+
+    std::cout << "Visualisation\n+-" ;
+    for(int i = 0 ; i<m_nbLayer+1 ; i++){
+        std::cout << "---" ;
+    }
+    std::cout << "+\n" ;
+
+    while(maxNeurons != 0){
+        std::cout << "| " ;
+        for(int i = 0 ; i< m_nbLayer+1 ; i++){
+            if(nbNeurons[i] != 0){
+                std::cout << "*  " ;
+                nbNeurons[i]-- ;
+            }else{
+                std::cout << "   " ;
+            }
+        }
+        std::cout << "|\n" ;
+        maxNeurons-- ;
+    }
+    std::cout << "+-" ;
+    for(int i = 0 ; i<m_nbLayer+1 ; i++){
+        std::cout << "---" ;
+    }
+    std::cout << "+\n" ;
+
+    return ;
+/*
     std::cout << "input  layer\t\t: " << m_inputSize << "\n---\n" ;
     for(int i = 0 ; i< m_nbLayer ; i++){
         std::cout << "hidden layer [" << i << "]\t: " ;
@@ -94,5 +131,5 @@ void NeuralNetwork::visualize(){
     std::cout << "* weight layer\t\t: " ;
     m_weights[m_nbLayer].display() ;
     std::cout << "+ bias layer\t\t: " ;
-    m_bias[m_nbLayer].display() ;
+    m_bias[m_nbLayer].display() ;*/
 }

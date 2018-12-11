@@ -3,6 +3,9 @@
 
 #include "Matrix.hpp"
 
+#include <time.h>
+#include <stdlib.h>
+
 namespace NeuralMaths{
     void randomize(Matrix<double> * x) ;
 

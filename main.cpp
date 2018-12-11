@@ -2,7 +2,9 @@
 
 #include "DeepTrain.hpp"
 
+#include <stdlib.h>
 #include <time.h>
+#include <iomanip>
 
 using namespace std ;
 
@@ -20,22 +22,26 @@ double errAvg(NeuralNetwork *nn, NeuralTrain *nt){
 void printNN(NeuralNetwork *nn, NeuralTrain *nt){
     cout << "errAVG\t" << errAvg(nn,nt) << '\n' ;
     for(int i = 0 ; i < nt->examples.size() ; i++)
-        cout << " " << nt->examples[i](0,0) << ", " << nt->examples[i](1,0) << "\t" << abs(nn->getError(&(nt->examples[i]),&(nt->targets[i]))(0,0)) << "\n" ;
+        cout << "exemple : " << i << "\t(" << nt->examples[i](0,0) << ", " << nt->examples[i](1,0) << ") = " << nt->targets[i](0,0) << "\tERRORS : " << abs(nn->getError(&(nt->examples[i]),&(nt->targets[i]))(0,0)) << "\n" ;
 }
 
-int main()
-{
+int main(){
     srand(time(nullptr)) ;
+
+    cout << "~! EXEMPLE OR !~\n\n" ;
 
     NeuralTrain nt = OR_training() ;
     NeuralNetwork nn = NeuralNetwork(2,2,1,1) ;
+    nn.visualize() ;
+
     nn.learningRate = 0.5 ;
 
-    nn.learningRate = 0.30 ;
+    nn.learningRate = 0.70 ;
 
     printNN(&nn,&nt) ;
+    cout << "\n" ;
 
-    training(&nn,nt,10000,TRAIN_NONE) ;
+    training(&nn,nt,4,TRAIN_NONE) ;
 
     cout << "train finished\n" ;
 
