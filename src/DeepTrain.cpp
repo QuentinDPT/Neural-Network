@@ -9,7 +9,9 @@
 #include <stdio.h>
 #include <fstream>
 
+/// GENERATION D'EXEMPLES BINAIRES
 
+// entraine un réseau de neurones pour correspondre a la fonction OU ( f(x,y) = x|y )
 NeuralTrain OR_training(){
     NeuralTrain res ;
 
@@ -47,6 +49,7 @@ NeuralTrain OR_training(){
     return res ;
 }
 
+// entraine un réseau de neurones pour correspondre a la fonction OU EXCLUSIF ( f(x,y) = x|y )
 NeuralTrain XOR_training(){
     NeuralTrain res ;
 
@@ -84,6 +87,86 @@ NeuralTrain XOR_training(){
     return res ;
 }
 
+// entraine un réseau de neurones pour correspondre a la fonction 0 ( f(x,y) = 0 )
+NeuralTrain NULL_training(){
+    NeuralTrain res ;
+
+    Matrix<double> example = Matrix<double>(2,1) ;
+    Matrix<double> target  = Matrix<double>(1,1) ;
+
+    example(0,0) = 0 ;
+    example(1,0) = 0 ;
+    target(0,0) = 0 ;
+
+    res.examples.push_back(example) ;
+    res.targets.push_back(target) ;
+
+    example(0,0) = 0 ;
+    example(1,0) = 1 ;
+    target(0,0) = 0 ;
+
+    res.examples.push_back(example) ;
+    res.targets.push_back(target) ;
+
+    example(0,0) = 1 ;
+    example(1,0) = 0 ;
+    target(0,0) = 0 ;
+
+    res.examples.push_back(example) ;
+    res.targets.push_back(target) ;
+
+    example(0,0) = 1 ;
+    example(1,0) = 1 ;
+    target(0,0) = 0 ;
+
+    res.examples.push_back(example) ;
+    res.targets.push_back(target) ;
+
+    return res ;
+}
+
+// entraine un réseau de neurones pour correspondre a la fonction 1  ( f(x,y) = 1 )
+NeuralTrain NO_NULL_training(){
+    NeuralTrain res ;
+
+    Matrix<double> example = Matrix<double>(2,1) ;
+    Matrix<double> target  = Matrix<double>(1,1) ;
+
+    example(0,0) = 0 ;
+    example(1,0) = 0 ;
+    target(0,0) = 1 ;
+
+    res.examples.push_back(example) ;
+    res.targets.push_back(target) ;
+
+    example(0,0) = 0 ;
+    example(1,0) = 1 ;
+    target(0,0) = 1 ;
+
+    res.examples.push_back(example) ;
+    res.targets.push_back(target) ;
+
+    example(0,0) = 1 ;
+    example(1,0) = 0 ;
+    target(0,0) = 1 ;
+
+    res.examples.push_back(example) ;
+    res.targets.push_back(target) ;
+
+    example(0,0) = 1 ;
+    example(1,0) = 1 ;
+    target(0,0) = 1 ;
+
+    res.examples.push_back(example) ;
+    res.targets.push_back(target) ;
+
+    return res ;
+}
+
+
+/// ENTRAINEMENT
+
+// crée et entraine un réseau pour un réseau pour une fonction binaire définie par nt
 NeuralNetwork training(NeuralTrain nt, unsigned int nbTraining, TRAIN_FLAG options){
     NeuralNetwork ret(nt.examples[0].getRows(), 2, 1, nt.targets[0].getRows()) ;
     int rd ;
@@ -96,7 +179,7 @@ NeuralNetwork training(NeuralTrain nt, unsigned int nbTraining, TRAIN_FLAG optio
 
     Matrix<double> mat ;
 
-    for(int i = 0 ; i<nbTraining ; i++){
+    for(unsigned int i = 0 ; i<nbTraining ; i++){
         rd = rand()%nt.examples.size() ;
 
         if(options & TRAIN_VISUALIZE){
@@ -117,8 +200,10 @@ NeuralNetwork training(NeuralTrain nt, unsigned int nbTraining, TRAIN_FLAG optio
     return ret ;
 }
 
+
+// entraine le réseau nn pour une fonction définie par nt
 void training(NeuralNetwork *nn, NeuralTrain nt, unsigned int nbTraining, TRAIN_FLAG options){
-    int rd ;
+    unsigned int rd ;
     std::ofstream file("./resulats.train.nn", std::ofstream::out | std::ofstream::trunc) ;
 
     if(options & TRAIN_VISUALIZE && !file){
@@ -131,7 +216,7 @@ void training(NeuralNetwork *nn, NeuralTrain nt, unsigned int nbTraining, TRAIN_
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     double prevErr[4] ;
 
-    for(int i = 0 ; i<nbTraining ; i++){
+    for(unsigned int i = 0 ; i<nbTraining ; i++){
         rd = rand()%nt.examples.size() ;
 
         if(options & TRAIN_VISUALIZE){
@@ -140,7 +225,7 @@ void training(NeuralNetwork *nn, NeuralTrain nt, unsigned int nbTraining, TRAIN_
         }
 
 
-        for(int j = 0 ; j<nt.examples.size() ; j++){
+        for(unsigned int j = 0 ; j<nt.examples.size() ; j++){
             SetConsoleTextAttribute(hConsole, 15);
             if(j == rd)
                 SetConsoleTextAttribute(hConsole, 23);
@@ -157,8 +242,9 @@ void training(NeuralNetwork *nn, NeuralTrain nt, unsigned int nbTraining, TRAIN_
         nn->train(&(nt.examples[rd]),&(nt.targets[rd])) ;
 
 
+        // Visualisation de la validation des données
         double cost = 0 ;
-        for(int j = 0 ; j<nt.examples.size() ; j++){
+        for(unsigned int j = 0 ; j<nt.examples.size() ; j++){
             SetConsoleTextAttribute(hConsole, 15);
             double newErr = nn->getError(&(nt.examples[j]),&(nt.targets[j]))(0,0) ;
             if(prevErr[j] > 0)
@@ -173,6 +259,7 @@ void training(NeuralNetwork *nn, NeuralTrain nt, unsigned int nbTraining, TRAIN_
                     SetConsoleTextAttribute(hConsole, 10);
             if(j == rd)
                 SetConsoleTextAttribute(hConsole, 23);
+
             std::cout << "  : " << newErr ;
             SetConsoleTextAttribute(hConsole, 15);
             std::cout << " \t" ;
@@ -194,6 +281,9 @@ void training(NeuralNetwork *nn, NeuralTrain nt, unsigned int nbTraining, TRAIN_
         while(!kbhit()) ;
         getch() ;
 
+        //*/
+
     }
 }
-// end
+
+/// ...
