@@ -9,7 +9,7 @@ void NeuralMaths::randomize(Matrix<double> * x){
     for(unsigned int i(0) ; i < x->getRows() ; i++)
     for(unsigned int j(0) ; j < x->getColumns() ; j++){
         do{
-            rad = double(rand() % 2000) / 1000 ;
+            rad = double(rand() % 1000) / 1000 ;
         }while(rad == 0) ;
 
         x->operator()(i,j) = rad ;

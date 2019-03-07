@@ -2,6 +2,7 @@
 #define DEEPLEARNING_HPP
 
 #include "Matrix.hpp"
+#include "NeuralMath.hpp"
 
 #include <vector>
 
@@ -21,7 +22,9 @@ class NeuralNetwork
 
         void train(Matrix<double> *input, Matrix<double> *target) ;
         Matrix<double> guess(Matrix<double> *input) ;
-        inline Matrix<double> getError(Matrix<double> *input, Matrix<double> *target) ;
+        inline Matrix<double> getError(Matrix<double> *input, Matrix<double> *target){
+            return NeuralMaths::hadamard(*target - guess(input), *target - guess(input)) ;
+        }
 
 
         void visualize() ;

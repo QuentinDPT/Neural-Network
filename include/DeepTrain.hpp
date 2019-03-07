@@ -17,6 +17,8 @@ typedef struct{
 
 NeuralTrain OR_training() ;
 NeuralTrain XOR_training() ;
+NeuralTrain NULL_training() ;
+NeuralTrain NO_NULL_training() ;
 
 NeuralNetwork training(NeuralTrain nt, unsigned int nbTraining, TRAIN_FLAG options) ;
 void          training(NeuralNetwork *nn, NeuralTrain nt, unsigned int nbTraining, TRAIN_FLAG options) ;
