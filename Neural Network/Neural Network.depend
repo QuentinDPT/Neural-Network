@@ -1,0 +1,198 @@
+# depslib dependency file v1.0
+1519243933 source:c:\users\quentin\desktop\neural network\vertion 2.0\main.cpp
+	<iostream>
+	"DeepLearning.hpp"
+	<conio.h>
+	<fstream>
+
+1519243801 c:\users\quentin\desktop\neural network\vertion 2.0\include\deeplearning.hpp
+	"Matrix.hpp"
+	<vector>
+	<math.h>
+	<time.h>
+	<fstream>
+
+1519233789 c:\users\quentin\desktop\neural network\vertion 2.0\include\matrix.hpp
+	<vector>
+	<iostream>
+	<string>
+	<stdio.h>
+	<stdlib.h>
+
+1519643163 source:c:\users\quentin\desktop\neural network\vertion 3.0\main.cpp
+	<iostream>
+	"DeepLearning.hpp"
+	<conio.h>
+	<fstream>
+
+1519642432 c:\users\quentin\desktop\neural network\vertion 3.0\include\deeplearning.hpp
+	<Matrix.hpp>
+	"Matrix.hpp"
+
+1519387118 c:\users\quentin\desktop\neural network\vertion 3.0\include\matrix.hpp
+	<vector>
+	<iostream>
+	<string>
+	<stdio.h>
+	<stdlib.h>
+
+1519643371 source:c:\users\quentin\desktop\neural network\vertion 3.0\src\deeplearning.cpp
+	"DeepLearning.hpp"
+	<math.h>
+
+1521102255 source:c:\users\quentin\desktop\projets c++\neural network\vertion 3.0\src\deeplearning.cpp
+	"DeepLearning.hpp"
+	"NeuralMath.hpp"
+	<string>
+
+1521101912 c:\users\quentin\desktop\projets c++\neural network\vertion 3.0\include\deeplearning.hpp
+	<Matrix.hpp>
+	<string>
+	"Matrix.hpp"
+
+1521102376 c:\users\quentin\desktop\projets c++\neural network\vertion 3.0\include\matrix.hpp
+	<vector>
+	<iostream>
+
+1521061772 source:c:\users\quentin\desktop\projets c++\neural network\vertion 3.0\main.cpp
+	<iostream>
+	"DeepLearning.hpp"
+	<conio.h>
+	<fstream>
+	<time.h>
+
+1521102073 source:c:\users\quentin\desktop\projets c++\neural network\vertion 3.0\src\neuralmath.cpp
+	"NeuralMath.hpp"
+	<math.h>
+
+1521102026 c:\users\quentin\desktop\projets c++\neural network\vertion 3.0\include\neuralmath.hpp
+	"Matrix.hpp"
+
+1527699418 source:c:\users\quentin\desktop\projets c++\neural network\version 5\src\deeplearning.cpp
+	"DeepLearning.hpp"
+	"NeuralMath.hpp"
+	<string>
+	<fstream>
+
+1544009965 c:\users\quentin\desktop\projets c++\neural network\version 5\include\deeplearning.hpp
+	"Matrix.hpp"
+	<string>
+	<time.h>
+
+1523370978 c:\users\quentin\desktop\projets c++\neural network\version 5\include\matrix.hpp
+	<vector>
+	<iostream>
+
+1525340387 c:\users\quentin\desktop\projets c++\neural network\version 5\include\neuralmath.hpp
+	"Matrix.hpp"
+
+1521102073 source:c:\users\quentin\desktop\projets c++\neural network\version 5\src\neuralmath.cpp
+	"NeuralMath.hpp"
+	<math.h>
+
+1544010008 source:c:\users\quentin\desktop\projets c++\neural network\version 5\main.cpp
+	<iostream>
+	"DeepLearning.hpp"
+	<conio.h>
+	<fstream>
+	<time.h>
+	<string>
+
+1544012543 source:c:\users\quentin\desktop\projets c++\neural network\version 6\main.cpp
+	<iostream>
+	"DeepLearning.hpp"
+	"Matrix.hpp"
+	"DeepTrain.hpp"
+	<time.h>
+
+1544012142 c:\users\quentin\desktop\projets c++\neural network\version 6\include\deeplearning.hpp
+	"Matrix.hpp"
+
+1544011128 c:\users\quentin\desktop\projets c++\neural network\version 6\include\matrix.hpp
+	<vector>
+	<iostream>
+
+1521102073 source:c:\users\quentin\desktop\projets c++\neural network\version 6\src\neuralmath.cpp
+	"NeuralMath.hpp"
+	<math.h>
+
+1525340387 c:\users\quentin\desktop\projets c++\neural network\version 6\include\neuralmath.hpp
+	"Matrix.hpp"
+
+1544012165 source:c:\users\quentin\desktop\projets c++\neural network\version 6\src\deeplearning.cpp
+	"DeepLearning.hpp"
+	"NeuralMath.hpp"
+
+1544012510 c:\users\quentin\desktop\projets c++\neural network\version 6\include\deeptrain.hpp
+	"Matrix.hpp"
+	"DeepLearning.hpp"
+
+1544012620 source:c:\users\quentin\desktop\projets c++\neural network\version 6\src\deeptrain.cpp
+	"DeepTrain.hpp"
+	<time.h>
+
+1544549814 source:c:\users\quentin\desktop\projets c++\neural network v2\version 1\main.cpp
+	<iostream>
+	"DeepTrain.hpp"
+	<time.h>
+
+1544083214 c:\users\quentin\desktop\projets c++\neural network v2\version 1\include\deeplearning.hpp
+	"Matrix.hpp"
+	<vector>
+
+1544045884 c:\users\quentin\desktop\projets c++\neural network v2\version 1\include\matrix.hpp
+	<vector>
+	<iostream>
+
+1544437994 c:\users\quentin\desktop\projets c++\neural network v2\version 1\include\deeptrain.hpp
+	"Matrix.hpp"
+	"DeepLearning.hpp"
+
+1544549975 source:c:\users\quentin\desktop\projets c++\neural network v2\version 1\src\deeplearning.cpp
+	"DeepLearning.hpp"
+	"NeuralMath.hpp"
+	<iostream>
+
+1525340387 c:\users\quentin\desktop\projets c++\neural network v2\version 1\include\neuralmath.hpp
+	"Matrix.hpp"
+
+1544438875 source:c:\users\quentin\desktop\projets c++\neural network v2\version 1\src\deeptrain.cpp
+	"DeepTrain.hpp"
+	<time.h>
+	<conio.h>
+	<fstream>
+
+1521102073 source:c:\users\quentin\desktop\projets c++\neural network v2\version 1\src\neuralmath.cpp
+	"NeuralMath.hpp"
+	<math.h>
+
+1544549814 source:c:\users\quentin\desktop\neural-network\main.cpp
+	<iostream>
+	"DeepTrain.hpp"
+	<time.h>
+
+1544437994 c:\users\quentin\desktop\neural-network\include\deeptrain.hpp
+	"Matrix.hpp"
+	"DeepLearning.hpp"
+
+1544045884 c:\users\quentin\desktop\neural-network\include\matrix.hpp
+	<vector>
+	<iostream>
+
+1544083214 c:\users\quentin\desktop\neural-network\include\deeplearning.hpp
+	"Matrix.hpp"
+	<vector>
+
+1544550212 source:c:\users\quentin\desktop\neural-network\src\deeptrain.cpp
+	"DeepTrain.hpp"
+	<time.h>
+	<conio.h>
+	<fstream>
+
+1521102073 source:c:\users\quentin\desktop\neural-network\src\neuralmath.cpp
+	"NeuralMath.hpp"
+	<math.h>
+
+1525340387 c:\users\quentin\desktop\neural-network\include\neuralmath.hpp
+	"Matrix.hpp"
+
