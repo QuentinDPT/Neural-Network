@@ -196,7 +196,7 @@
 1525340387 c:\users\quentin\desktop\neural-network\include\neuralmath.hpp
 	"Matrix.hpp"
 
-1567223498 source:c:\users\pc-quentin\documents\developpement\git\neural-network\neural network\main.cpp
+1567240318 source:c:\users\pc-quentin\documents\developpement\git\neural-network\neural network\main.cpp
 	<iostream>
 	"DeepTrain.hpp"
 	<time.h>
@@ -232,4 +232,11 @@
 	<conio.h>
 	<fstream>
 	<stdlib.h>
+
+1567240338 source:c:\users\pc-quentin\documents\developpement\git\neural-network\neural network\src\outputsaver.cpp
+	"OutputSaver.hpp"
+
+1567241688 c:\users\pc-quentin\documents\developpement\git\neural-network\neural network\include\outputsaver.hpp
+	<vector>
+	<string>
 
