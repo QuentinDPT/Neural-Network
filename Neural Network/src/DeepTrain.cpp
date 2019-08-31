@@ -3,6 +3,8 @@
 #include <time.h>
 #include <conio.h>
 #include <fstream>
+#include <stdlib.h>
+
 
 
 NeuralTrain OR_training(){
@@ -91,7 +93,7 @@ NeuralNetwork training(NeuralTrain nt, unsigned int nbTraining, TRAIN_FLAG optio
 
     Matrix<double> mat ;
 
-    for(int i = 0 ; i<nbTraining ; i++){
+    for(unsigned int i = 0 ; i<nbTraining ; i++){
         rd = rand()%nt.examples.size() ;
 
         if(options & TRAIN_VISUALIZE){
@@ -123,7 +125,7 @@ void training(NeuralNetwork *nn, NeuralTrain nt, unsigned int nbTraining, TRAIN_
 
     Matrix<double> mat ;
 
-    for(int i = 0 ; i<nbTraining ; i++){
+    for(unsigned int i = 0 ; i<nbTraining ; i++){
         rd = rand()%nt.examples.size() ;
 
         if(options & TRAIN_VISUALIZE){
@@ -133,13 +135,13 @@ void training(NeuralNetwork *nn, NeuralTrain nt, unsigned int nbTraining, TRAIN_
 
         mat = nn->guess(&(nt.examples[rd])) ;
 
-        std::cout << rd << '\t' << nn->getError(&(nt.examples[rd]),&(nt.targets[rd]))(0,0) << '\n' ;
+        //std::cout << rd << '\t' << nn->getError(&(nt.examples[rd]),&(nt.targets[rd]))(0,0) << '\n' ;
 
         nn->train(&(nt.examples[rd]),&(nt.targets[rd])) ;
 
-        std::cout << rd << '\t' << nn->getError(&(nt.examples[rd]),&(nt.targets[rd]))(0,0) << '\n' << '\n' << "PRESS TO CONTINUE\n" ;
-        while(!kbhit()) ;
-        getch() ;
+        //std::cout << rd << '\t' << nn->getError(&(nt.examples[rd]),&(nt.targets[rd]))(0,0) << '\n' << '\n' << "PRESS TO CONTINUE\n" ;
+        //while(!kbhit()) ;
+        //getch() ;
     }
 }
 // end

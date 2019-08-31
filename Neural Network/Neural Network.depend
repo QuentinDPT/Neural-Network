@@ -196,3 +196,40 @@
 1525340387 c:\users\quentin\desktop\neural-network\include\neuralmath.hpp
 	"Matrix.hpp"
 
+1567223498 source:c:\users\pc-quentin\documents\developpement\git\neural-network\neural network\main.cpp
+	<iostream>
+	"DeepTrain.hpp"
+	<time.h>
+	<stdlib.h>
+
+1551989752 c:\users\pc-quentin\documents\developpement\git\neural-network\neural network\include\deeptrain.hpp
+	"Matrix.hpp"
+	"DeepLearning.hpp"
+
+1551989752 c:\users\pc-quentin\documents\developpement\git\neural-network\neural network\include\matrix.hpp
+	<vector>
+	<iostream>
+
+1567222851 c:\users\pc-quentin\documents\developpement\git\neural-network\neural network\include\deeplearning.hpp
+	"Matrix.hpp"
+	<vector>
+
+1551989753 source:c:\users\pc-quentin\documents\developpement\git\neural-network\neural network\src\neuralmath.cpp
+	"NeuralMath.hpp"
+	<math.h>
+
+1551989752 c:\users\pc-quentin\documents\developpement\git\neural-network\neural network\include\neuralmath.hpp
+	"Matrix.hpp"
+
+1567222851 source:c:\users\pc-quentin\documents\developpement\git\neural-network\neural network\src\deeplearning.cpp
+	"DeepLearning.hpp"
+	"NeuralMath.hpp"
+	<iostream>
+
+1567222753 source:c:\users\pc-quentin\documents\developpement\git\neural-network\neural network\src\deeptrain.cpp
+	"DeepTrain.hpp"
+	<time.h>
+	<conio.h>
+	<fstream>
+	<stdlib.h>
+
